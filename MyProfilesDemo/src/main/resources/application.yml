@@ -1,0 +1,36 @@
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+server.port: 7001
+
+---
+spring:
+  config:
+    activate:
+      on-profile: sit
+server.port: 7002
+
+---
+spring:
+  config:
+    activate:
+      on-profile: cloud
+
+server.port: 7003
+management:
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  server:
+    port: 7005
+
+---

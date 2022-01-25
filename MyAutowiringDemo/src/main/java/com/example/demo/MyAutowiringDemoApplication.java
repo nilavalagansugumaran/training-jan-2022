@@ -11,6 +11,13 @@ public class MyAutowiringDemoApplication {
 
 		ApplicationContext ctx = SpringApplication.run(MyAutowiringDemoApplication.class, args);
 		ctx.getBean(BankComponent.class).takeDeposit();
+
+		ctx.getBean("myOwnBean", MyOwnBean.class).doSomething();
+		ctx.getBean("myOwnBean1", MyOwnBean.class).doSomething();
+		ctx.getBean("myOwnBean2", MyOwnBean.class).doSomething();
+		ctx.getBean("myOwnBean3", MyOwnBean.class).doSomething();
+
+		System.out.println(ctx.getBean(MyAppContact.class).toString());
 	}
 
 }
