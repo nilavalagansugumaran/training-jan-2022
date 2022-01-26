@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.models.Employee;
+import com.example.demo.service.EmployeeJdbcService;
 import com.example.demo.service.SimpleEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +12,9 @@ import java.util.List;
 @RestController
 public class SimpleEmployeeController {
 
-    @Autowired private SimpleEmployeeService simpleEmployeeService;
+   // @Autowired private SimpleEmployeeService simpleEmployeeService;
+
+   @Autowired private EmployeeJdbcService simpleEmployeeService;
 
     @GetMapping(path="/employee",headers = {"Content-Type=application/json,application/xml",
             "Accept=application/json,application/xml"})
