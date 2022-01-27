@@ -14,4 +14,10 @@ public class SenderComponent {
         jmsTemplate.convertAndSend("destination-1", str);
         System.out.println("Sending message complete...");
     }
+
+    public void sendMessage(Employee employee){
+        System.out.println("Sending employee message...");
+        jmsTemplate.convertAndSend("destination-2", employee);
+        System.out.println("Sending employee message complete...");
+    }
 }

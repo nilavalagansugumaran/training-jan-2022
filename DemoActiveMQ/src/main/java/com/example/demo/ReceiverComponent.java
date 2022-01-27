@@ -11,4 +11,10 @@ public class ReceiverComponent {
         System.out.println("Message received...");
         System.out.println(str);
     }
+
+    @JmsListener(destination = "destination-2")
+    public void receiveMessage(Employee employee){
+        System.out.println("Employee Message received...");
+        System.out.println(employee);
+    }
 }
