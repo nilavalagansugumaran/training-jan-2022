@@ -1,6 +1,9 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Table(name = "Orders")
 @Entity
@@ -9,7 +12,12 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotBlank(message = "items can not be blank")
     private String items;
+
+    @Min(value = 200, message = "minimum price should be 200")
+    @Max(value = 3000, message = "max price is 3000")
     private Double price;
 
     @Override
