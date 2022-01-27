@@ -10,7 +10,8 @@ public class DemoRabbitMqApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(DemoRabbitMqApplication.class, args);
-		ctx.getBean(RabbitSenderComponent.class).sendMessage(new Employee("nila-1", "nila1@nila.com"));
+		ctx.getBean(RabbitSenderComponent.class).sendMessage(new Employee("nila-2", "nila2@nila.com"));
+		ctx.getBean(RabbitSenderComponent.class).sendMessage(new Employee("nila-3", "nila3@nila.com"));
 	}
 
 }
